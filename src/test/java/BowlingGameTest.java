@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BowlingGameTest {
     @Test
-    void all_frame_without_strike_or_spare(){
+    void no_strike_or_spare_frame(){
         //given
         List<Integer> bowling_throw_score = new ArrayList<Integer>();
         Collections.addAll(bowling_throw_score, 2, 5, 3, 6, 4, 5, 1, 7, 2, 5, 5, 3, 4, 3, 6, 3, 3, 3, 2, 5);
@@ -21,12 +21,12 @@ public class BowlingGameTest {
     }
 
     @Test
-    void frame_with_spare_in_top_nine_frame(){
+    void some_spare_frame_in_top_nine_frame(){
         //given
         List<Integer> bowling_throw_score = new ArrayList<Integer>();
-        Collections.addAll(bowling_throw_score, 2, 5, 3, 6, 4, 5, 1, 9, 2, 5, 5, 3, 4, 3, 6, 3, 3, 3, 2, 5);
+        Collections.addAll(bowling_throw_score, 2, 5, 4, 6, 4, 5, 1, 9, 2, 5, 5, 3, 4, 3, 6, 3, 3, 3, 2, 5);
         //int[] bowling_throw_score = {2, 5, 3, 6, 4, 5, 1, 7, 2, 5, 5, 3, 4, 3, 6, 3, 3, 3, 2, 5};
-        int expect = 81;
+        int expect = 86;
         //when
         BowlingGame bowlingGame = new BowlingGame();
         int final_score = bowlingGame.convert(bowling_throw_score);
